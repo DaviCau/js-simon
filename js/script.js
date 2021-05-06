@@ -26,17 +26,18 @@ alert("Memorizza i seguenti numeri\n" + numeri);
 
 var tentativiCorretti = [];
 
-for (var i = 1; i <= 5; i++) {
-    var tentativo = parseInt(prompt("Inserisci il " + i + "° numero"))
-    if (isInArray(tentativo, numeri)) {
-        tentativiCorretti.push(tentativo)
+setTimeout (function() {
+    for (var i = 1; i <= 5; i++) {
+        var tentativo = parseInt(prompt("Inserisci il " + i + "° numero"))
+        if (isInArray(tentativo, numeri)) {
+            tentativiCorretti.push(tentativo)
+        }
     }
-}
-console.log(tentativiCorretti);
-
-if (tentativiCorretti.length > 0) {
-    alert("Hai indovinato " + tentativiCorretti.length + " numeri:\n" + tentativiCorretti)
-} else {
-    alert("Non hai indovinato nessun numero")
-}
-
+    console.log(tentativiCorretti);
+    
+    if (tentativiCorretti.length > 0) {
+        alert("Hai indovinato " + tentativiCorretti.length + " numeri:\n" + tentativiCorretti)
+    } else {
+        alert("Non hai indovinato nessun numero")
+    }
+}, 30000)
